@@ -1,0 +1,22 @@
+// Accessing mongoose
+const mongoose=require('mongoose');
+//Database connection
+//mongoose.connect('mongodb+srv://userone:userone@ictakprojectfiles.z0atk.mongodb.net/LIBRARYAPP?retryWrites=true&w=majority');
+mongoose.connect('mongodb://localhost:27017/jobportal');
+//Schema creation
+const Schema=mongoose.Schema;
+const UserSchema = new Schema({
+    register:String,
+    name:String,
+    phonenumber:String,
+    email:String,
+    password:String,
+    passwordcheck:String,
+    status:String
+    
+       
+    
+});
+//Model creation
+var Userdata=mongoose.model('Userdata',UserSchema);
+module.exports=Userdata;
